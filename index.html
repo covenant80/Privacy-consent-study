@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Two fictional privacy consent prototypes for a usability study.">
+  <title>Privacy-aware consent interface study</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand-mark" aria-hidden="true">P</div>
+    <div>
+      <p class="eyebrow">USABILITY STUDY · FICTIONAL DEMO</p>
+      <h1>Privacy-aware consent interfaces</h1>
+      <p class="subtitle">Compare a conventional notice with a concise, contextual explanation.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="study-note" aria-labelledby="study-note-title">
+      <h2 id="study-note-title">Study prototype, not a live service</h2>
+      <p>This fictional student planner does not submit or collect real personal data. Your choice is stored only in
+        this browser for demonstration. The retention and provider details below are illustrative assumptions for this
+        prototype and must be replaced with verified facts before use by a real service.</p>
+    </section>
+
+    <nav class="mode-switch" aria-label="Choose consent interface">
+      <button type="button" class="mode-button active" data-mode="legal" aria-pressed="true">A · Conventional
+        legalistic</button>
+      <button type="button" class="mode-button" data-mode="contextual" aria-pressed="false">B · Concise
+        contextual</button>
+    </nav>
+
+    <section class="prototype-wrap">
+      <div class="prototype-meta">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="mode-label">Prototype A · Conventional legalistic notice</span>
+        <span class="demo-tag">Demo only</span>
+      </div>
+
+      <article id="legal-panel" class="consent-card" aria-labelledby="legal-title">
+        <div class="card-topline">
+          <span class="app-icon" aria-hidden="true">▦</span>
+          <span>STUDENT PLANNER</span>
+        </div>
+        <h2 id="legal-title">Privacy and Data Processing Consent</h2>
+        <p class="formal-copy">By proceeding, you acknowledge that the application processes your email address for
+          account administration, authentication, and account recovery. Subject to your separate selection below, the
+          application may also collect basic application usage information, including feature interactions, for service
+          evaluation and analytics.</p>
+        <p class="formal-copy">The email address is retained while the account remains active and is deleted within 30
+          days after account deletion. If optional analytics is enabled, basic usage events are retained for up to 12
+          months. In this fictional demonstration, no external analytics provider receives the usage events. Data is not
+          used for advertising and precise location is not collected for these purposes.</p>
+        <p class="formal-copy">The user may decline optional analytics without losing access to the planner. Consent
+          preferences may be amended or withdrawn at any time through Settings → Privacy. For questions about this
+          demonstration, contact privacy@example.invalid.</p>
+
+        <div class="choice-box legal-choice">
+          <label class="check-row" for="legal-analytics">
+            <input id="legal-analytics" type="checkbox" class="analytics-choice">
+            <span><strong>Optional processing consent.</strong> I consent to the collection and processing of
+              application usage information for analytics and service improvement.</span>
+          </label>
+          <p class="field-note">This selection is optional and is not required to create or use an account.</p>
+        </div>
+        <div class="button-row">
+          <button type="button" class="btn btn-primary save-choice" data-choice="selected">Accept selected
+            choices</button>
+          <button type="button" class="btn btn-secondary save-choice" data-choice="reject">Reject optional
+            analytics</button>
+        </div>
+        <button class="text-button details-toggle" type="button" aria-expanded="false"
+          aria-controls="legal-details">Read full privacy notice <span aria-hidden="true">＋</span></button>
+        <div id="legal-details" class="details-panel" hidden>
+          <h3>Additional information</h3>
+          <dl>
+            <dt>Data controller</dt>
+            <dd>Student Planner Demo (fictional).</dd>
+            <dt>Required data</dt>
+            <dd>Email address, used for account sign-in and recovery.</dd>
+            <dt>Optional data</dt>
+            <dd>Basic feature-use events, such as which planner features are opened. No message contents or precise
+              location are collected for analytics.</dd>
+            <dt>Purpose</dt>
+            <dd>Account administration and recovery; optional product-use analysis and service improvement.</dd>
+            <dt>Retention</dt>
+            <dd>Email: while the account is active, then deletion within 30 days. Analytics events: up to 12 months.
+            </dd>
+            <dt>Recipients</dt>
+            <dd>No external analytics provider receives usage events in this fictional demo.</dd>
+            <dt>Your controls</dt>
+            <dd>Change or withdraw analytics permission in Settings → Privacy. Declining analytics does not prevent use
+              of the planner.</dd>
+            <dt>Privacy contact</dt>
+            <dd>privacy@example.invalid (placeholder; not a live mailbox).</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article id="contextual-panel" class="consent-card contextual-card" aria-labelledby="contextual-title" hidden>
+        <div class="card-topline">
+          <span class="app-icon" aria-hidden="true">▦</span>
+          <span>STUDENT PLANNER</span>
+        </div>
+        <div class="context-label">Before you create your account</div>
+        <h2 id="contextual-title">Your information, explained</h2>
+        <p class="intro-copy">We need your email to set up your account. Optional app-use analytics is a separate
+          choice.</p>
+
+        <section class="info-row">
+          <span class="info-icon" aria-hidden="true">✉</span>
+          <div>
+            <h3>Email address <span class="pill required">Required</span></h3>
+            <p>Used to sign you in and help you recover your account. It is kept while your account is active and
+              deleted within 30 days after you delete the account.</p>
+          </div>
+        </section>
+        <section class="info-row">
+          <span class="info-icon" aria-hidden="true">⌁</span>
+          <div>
+            <h3>Basic app-use information <span class="pill optional">Optional</span></h3>
+            <p>If you agree, we collect which planner features are used to learn what works well and improve the app.
+              These events are kept for up to 12 months.</p>
+          </div>
+        </section>
+        <div class="plain-callout">
+          <strong>Your choice matters</strong>
+          <p>You can use the planner without analytics. We do not use this information for advertising, do not collect
+            precise location for these purposes, and this demo does not send usage events to an outside analytics
+            provider.</p>
+        </div>
+        <div class="choice-box contextual-choice">
+          <label class="check-row" for="contextual-analytics">
+            <input id="contextual-analytics" type="checkbox" class="analytics-choice">
+            <span><strong>Allow optional app-use analytics</strong><br><span class="field-note">Optional — leave this
+                off if you do not want analytics.</span></span>
+          </label>
+        </div>
+        <div class="button-row">
+          <button type="button" class="btn btn-primary save-choice" data-choice="selected">Save my choices</button>
+          <button type="button" class="btn btn-secondary save-choice" data-choice="reject">Continue without
+            analytics</button>
+        </div>
+        <button class="text-button details-toggle" type="button" aria-expanded="false"
+          aria-controls="contextual-details">More details <span aria-hidden="true">＋</span></button>
+        <div id="contextual-details" class="details-panel" hidden>
+          <h3>More about your privacy</h3>
+          <dl>
+            <dt>Who is responsible?</dt>
+            <dd>Student Planner Demo (fictional).</dd>
+            <dt>Who receives the data?</dt>
+            <dd>No external analytics provider receives usage events in this fictional demo.</dd>
+            <dt>How long is it kept?</dt>
+            <dd>Email: while the account is active, then deletion within 30 days. Optional analytics events: up to 12
+              months.</dd>
+            <dt>Can I change my mind?</dt>
+            <dd>Yes. Go to Settings → Privacy to change or withdraw analytics permission. You can still use the planner
+              if you say no.</dd>
+            <dt>Questions?</dt>
+            <dd>privacy@example.invalid (placeholder; not a live mailbox).</dd>
+          </dl>
+        </div>
+      </article>
+
+      <div id="feedback" class="feedback" role="status" aria-live="polite" hidden></div>
+      <section class="settings-demo" aria-labelledby="settings-title">
+        <div>
+          <h2 id="settings-title">Settings → Privacy</h2>
+          <p>Demonstrates how a user can revisit their choice later. This changes only the local demo preference.</p>
+        </div>
+        <label class="settings-toggle">
+          <input id="settings-analytics" type="checkbox">
+          <span>Optional app-use analytics</span>
+        </label>
+        <button type="button" class="btn btn-small btn-secondary" id="update-settings">Update preference</button>
+      </section>
+    </section>
+
+    <section class="study-tools" aria-labelledby="study-tools-title">
+      <h2 id="study-tools-title">Usability-study tools</h2>
+      <p class="study-intro">These tools support the proposal’s evaluation. They do not upload results. Record outcomes
+        only with participant consent and report results in aggregate.</p>
+      <div class="timer-card">
+        <div><span class="tool-label">Decision timer</span><strong id="timer-display">00:00.0</strong><span
+            id="timer-state" class="field-note">Starts when a prototype is shown.</span></div>
+        <div class="button-row compact">
+          <button type="button" id="timer-start" class="btn btn-secondary">Start / restart</button>
+          <button type="button" id="timer-stop" class="btn btn-secondary">Stop timer</button>
+        </div>
+      </div>
+      <div class="quiz-card">
+        <h3>Comprehension check (5 questions)</h3>
+        <p class="field-note">Use after the participant has made a choice. This is a prototype questionnaire, not a
+          validated instrument.</p>
+        <form id="quiz-form">
+          <fieldset>
+            <legend>1. What information is required to create an account?</legend>
+            <label><input type="radio" name="q1" value="a"> Precise location</label>
+            <label><input type="radio" name="q1" value="b"> Email address</label>
+            <label><input type="radio" name="q1" value="c"> App-use analytics</label>
+          </fieldset>
+          <fieldset>
+            <legend>2. What is the email address used for?</legend>
+            <label><input type="radio" name="q2" value="a"> Advertising</label>
+            <label><input type="radio" name="q2" value="b"> Sharing publicly</label>
+            <label><input type="radio" name="q2" value="c"> Sign-in and account recovery</label>
+          </fieldset>
+          <fieldset>
+            <legend>3. Is optional analytics required?</legend>
+            <label><input type="radio" name="q3" value="a"> No</label>
+            <label><input type="radio" name="q3" value="b"> Yes</label>
+          </fieldset>
+          <fieldset>
+            <legend>4. What can optional analytics include?</legend>
+            <label><input type="radio" name="q4" value="a"> Passwords</label>
+            <label><input type="radio" name="q4" value="b"> Precise location</label>
+            <label><input type="radio" name="q4" value="c"> Basic feature-use events</label>
+          </fieldset>
+          <fieldset>
+            <legend>5. Where can the user change the choice?</legend>
+            <label><input type="radio" name="q5" value="a"> Public profile</label>
+            <label><input type="radio" name="q5" value="b"> Settings → Privacy</label>
+            <label><input type="radio" name="q5" value="c"> Nowhere</label>
+          </fieldset>
+          <button class="btn btn-primary" type="submit">Score comprehension</button>
+        </form>
+        <div id="quiz-result" class="quiz-result" role="status" aria-live="polite" hidden></div>
+      </div>
+      <div class="rating-card">
+        <h3>Participant ratings (1 = strongly disagree, 5 = strongly agree)</h3>
+        <form id="rating-form">
+          <label>It was clear what data would be collected.
+            <select name="clarity" required>
+              <option value="">Choose rating</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </label>
+          <label>The notice was transparent about how data would be used.
+            <select name="transparency" required>
+              <option value="">Choose rating</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </label>
+          <label>I felt pressured to accept analytics.
+            <select name="pressure" required>
+              <option value="">Choose rating</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </label>
+          <label>I feel confident I understood my choice.
+            <select name="confidence" required>
+              <option value="">Choose rating</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </label>
+          <button type="submit" class="btn btn-secondary">Show rating summary</button>
+        </form>
+        <div id="rating-result" class="quiz-result" role="status" aria-live="polite" hidden></div>
+      </div>
+    </section>
+    <footer>
+      <p><strong>Implementation note:</strong> This is a front-end research prototype. It does not establish legal
+        compliance or replace a reviewed privacy notice. Before production use, verify the actual controller, purposes,
+        recipients, retention, rights, contact details, and applicable legal basis.</p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
